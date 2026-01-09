@@ -1,0 +1,31 @@
+import * as React from 'react';
+import { Company, CrispSessionEventColors, Employment, Geolocation } from './NativeCrispModule';
+declare const CrispChat: () => React.JSX.Element;
+export default CrispChat;
+export declare const configure: (websiteId: string) => void;
+export declare const setTokenId: (tokenId: string | null) => void;
+export declare const setUserEmail: (email: string, signature: string | null) => void;
+export declare const setUserNickname: (name: string) => void;
+export declare const setUserPhone: (phone: string) => void;
+export declare const setUserCompany: (company: Company) => void;
+export declare const setUserAvatar: (url: string) => void;
+export declare const setSessionSegment: (segment: string) => void;
+export declare const setSessionSegments: (segments: string[], overwrite?: boolean) => void;
+export declare const setSessionString: (key: string, value: string) => void;
+export declare const setSessionBool: (key: string, value: boolean) => void;
+export declare const setSessionInt: (key: string, value: number) => void;
+export declare function getSessionIdentifier(): Promise<string | null>;
+export declare const pushSessionEvent: (name: string, color: CrispSessionEventColors) => void;
+export declare const pushSessionEvents: (events: {
+    name: string;
+    color: CrispSessionEventColors;
+}[]) => void;
+export declare const resetSession: () => void;
+export declare const show: () => void;
+export declare const searchHelpdesk: () => void;
+export declare const openHelpdeskArticle: (id: string, locale: string, title: string | null, category: string | null) => void;
+export declare const runBotScenario: (scenarioId: string) => void;
+export declare const registerPushToken: (token: string) => void;
+export type { Company, Geolocation, Employment };
+export { CrispSessionEventColors };
+//# sourceMappingURL=index.d.ts.map

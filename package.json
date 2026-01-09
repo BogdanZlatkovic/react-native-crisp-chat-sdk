@@ -32,7 +32,6 @@
     "build:plugin": "tsc --build plugin",
     "lint:plugin": "eslint plugin/src/*",
     "clean": "del-cli android/build example/android/build example/android/app/build example/ios/build lib",
-    "prepare": "yarn build:plugin && bob build",
     "release": "release-it"
   },
   "keywords": [
