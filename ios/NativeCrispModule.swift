@@ -162,4 +162,24 @@ public class NativeCrispModuleSwift: NSObject {
         CrispSDK.session.runBotScenario(id: id)
     }
 
+    @objc
+    public func registerPushToken(_ token: String) {
+        if let tokenData = Data(base64Encoded: token) {
+            CrispSDK.setDeviceToken(tokenData)
+        } else if let tokenData = token.data(using: .utf8) {
+            // Fallback: try as hex string converted to data
+            var data = Data()
+            var hex = token
+            while !hex.isEmpty {
+                let end = hex.index(hex.startIndex, offsetBy: min(2, hex.count))
+                let byte = UInt8(hex[..<end], radix: 16) ?? 0
+                data.append(byte)
+                hex = String(hex[end...])
+            }
+            if !data.isEmpty {
+                CrispSDK.setDeviceToken(data)
+            }
+        }
+    }
+
 }

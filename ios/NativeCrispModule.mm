@@ -144,6 +144,10 @@ RCT_EXPORT_MODULE(NativeCrispModule)
     [[NativeCrispModuleSwift shared] runBotScenario:scenarioId];
 }
 
+- (void)registerPushToken:(NSString *)token {
+    [[NativeCrispModuleSwift shared] registerPushToken:token];
+}
+
 + (NSString *)moduleName {
     return @"NativeCrispModule";
 }

@@ -9,6 +9,7 @@ import com.facebook.react.module.annotations.ReactModule
 
 import im.crisp.client.external.ChatActivity
 import im.crisp.client.external.Crisp
+import im.crisp.client.external.CrispNotificationClient
 import im.crisp.client.external.data.SessionEvent
 import im.crisp.client.external.data.SessionEvent.Color
 
@@ -152,6 +153,11 @@ class NativeCrispModule(reactContext: ReactApplicationContext) : NativeCrispModu
 
     override fun runBotScenario(scenarioId: String) {
         Crisp.runBotScenario(scenarioId)
+    }
+
+    override fun registerPushToken(token: String) {
+        val context = reactApplicationContext
+        CrispNotificationClient.sendTokenToCrisp(context, token)
     }
 
     companion object {

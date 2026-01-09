@@ -114,5 +114,9 @@ export const runBotScenario = (scenarioId: string) => {
   NativeCrispModule?.runBotScenario(scenarioId);
 };
 
+export const registerPushToken = (token: string) => {
+  NativeCrispModule?.registerPushToken(token);
+};
+
 export type { Company, Geolocation, Employment };
 export { CrispSessionEventColors };

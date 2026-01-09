@@ -60,6 +60,7 @@ export interface Spec extends TurboModule {
     category: string | null
   ): void;
   runBotScenario(scenarioId: string): void;
+  registerPushToken(token: string): void;
 }
 
 export default TurboModuleRegistry.getEnforcing<Spec>('NativeCrispModule');
