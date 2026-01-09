@@ -9,7 +9,7 @@ import com.facebook.react.module.annotations.ReactModule
 
 import im.crisp.client.external.ChatActivity
 import im.crisp.client.external.Crisp
-import im.crisp.client.external.CrispNotificationClient
+import im.crisp.client.external.notification.CrispNotificationClient
 import im.crisp.client.external.data.SessionEvent
 import im.crisp.client.external.data.SessionEvent.Color
 
